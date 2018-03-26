@@ -1,4 +1,4 @@
-Jagaricoin 1.0.1
+Jagaricoin 1.1.0
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2011-2014 Litecoin Developers

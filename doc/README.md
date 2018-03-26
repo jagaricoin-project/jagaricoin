@@ -1,4 +1,4 @@
-Jagaricoin 1.0.1
+Jagaricoin 1.1.0
 ====================
 
 Copyright (c) 2009-2014 Bitcoin Developers
@@ -31,7 +31,7 @@ Unpack the files into a directory and run:
 - bin/64/jagaricoin-qt (GUI, 64-bit)
 - bin/64/jagaricoind (headless, 64-bit)
 
-See the documentation at the [Jagaricoin Wiki](http://jagaricoin.info)
+See the documentation at the [Jagaricoin Wiki](http://www.jagaricoin.tk/)
 for help and more information.
 
 

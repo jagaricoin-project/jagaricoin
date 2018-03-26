@@ -14,7 +14,7 @@ Release Process
 
 ###tag version in git
 
-	git tag -s v1.0.1
+	git tag -s v1.1.0
 
 ###write release notes. git shortlog helps a lot, for example:
 

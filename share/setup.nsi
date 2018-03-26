@@ -5,9 +5,9 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.1.0
+!define VERSION 1.1.0.0
 !define COMPANY "Jagaricoin project"
-!define URL http://www.jagaricoin.org/
+!define URL http://www.jagaricoin.tk/
 
 # MUI Symbol Definitions
 !define MUI_ICON "../share/pixmaps/bitcoin.ico"
