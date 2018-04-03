@@ -75,10 +75,10 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 840000;
-        consensus.BIP34Height =  36000;
+        consensus.BIP34Height =  44000;
         consensus.BIP34Hash = uint256S("0x");
-        consensus.BIP65Height =  36000; //
-        consensus.BIP66Height =  36000; //
+        consensus.BIP65Height =  44000; //
+        consensus.BIP66Height =  44000; //
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 2 * 24 * 60 * 60; // Jagaricoin: 2 days
         consensus.nPowTargetSpacing = 2 * 60; // Jagaricoin: 2 minutes
