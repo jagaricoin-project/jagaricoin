@@ -1,5 +1,5 @@
 ---
-name: "jagaricoin-linux-0.15"
+name: "jagaricoin-linux-1.15"
 enable_cache: true
 suites:
 - "trusty"
