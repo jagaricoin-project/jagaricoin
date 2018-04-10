@@ -101,10 +101,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1527778799; // May 31, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000af05e8f9e1f86"); //32489
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x"); //
+        consensus.defaultAssumeValid = uint256S("0xe66fbcc4eb8b4d3ead29f3d45b204eddde5090fee82d759d7bbe7d2de83fdbbb"); //32489
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -124,8 +124,9 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xbeda29947410c7616c52f91511cb1215f4e7c8de790733688735546b78f0ba38"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("dnsseed.jagaricoin.tk", true);
         vSeeds.emplace_back("main-net.jagaricoin.tk", true);
+        vSeeds.emplace_back("dnsseed.jagaricoin.tk", true);
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,43);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -148,13 +149,14 @@ public:
                 { 15000, uint256S("0x28e92851eeca9443f892d12ce97fce796d98eaa95fc9e83ffcc38fddb0f07f13")},
                 { 23181, uint256S("0xbcf0e1cb20aabfae20b8fb9a3ba96514bc435e4807aa9f09a3c01c2d5371ad1a")},
                 { 29681, uint256S("0x891e72974fb3c91ec48e170aeda3ec8fdfd2142d8b29309e56b15632078a6361")},
+                { 32489, uint256S("0xe66fbcc4eb8b4d3ead29f3d45b204eddde5090fee82d759d7bbe7d2de83fdbbb")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block db42d00d824950a125f9b08b6b6c282c484781562fa8b3bd29d6ce4a2627c348 (height 1259851).
-            1522603883, // * UNIX timestamp of last known number of transactions
-            38657,     // * total number of transactions between genesis and that timestamp
+            1523333710, // * UNIX timestamp of last known number of transactions
+            41607,     // * total number of transactions between genesis and that timestamp
                        //   (the tx=... number in the SetBestChain debug.log lines)
             5000.0     // * estimated number of transactions per second after that timestamp
         };
@@ -195,7 +197,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1527778799; // May 31, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000001c701c52"); //454
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x06c0217e272f84eb558825391d1e0cb2b9273cc1032ff17435fd3efd8d1349f9"); //454
@@ -215,8 +217,8 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("dnsseed.jagaricoin.tk", true);
         vSeeds.emplace_back("test-net.jagaricoin.tk", true);
+        vSeeds.emplace_back("dnsseed.jagaricoin.tk", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,105);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
