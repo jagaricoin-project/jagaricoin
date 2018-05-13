@@ -45,8 +45,8 @@ const std::string CLIENT_NAME("JagaricoinCore");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "303b13b72c30"
-#define GIT_COMMIT_DATE "Tue, 19 Sep 2017 19:13:40 -0700"
+#define GIT_COMMIT_ID "01c622daa"
+#define GIT_COMMIT_DATE "Thu, 1 Mar 2018 19:31:21 +0900"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

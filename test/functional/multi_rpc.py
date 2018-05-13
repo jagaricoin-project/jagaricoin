@@ -12,10 +12,7 @@ import http.client
 import urllib.parse
 
 class HTTPBasicsTest (BitcoinTestFramework):
-
-    def __init__(self):
-        super().__init__()
-        self.setup_clean_chain = False
+    def set_test_params(self):
         self.num_nodes = 2
 
     def setup_chain(self):
@@ -23,8 +20,8 @@ class HTTPBasicsTest (BitcoinTestFramework):
         #Append rpcauth to bitcoin.conf before initialization
         rpcauth = "rpcauth=rt:93648e835a54c573682c2eb19f882535$7681e9c5b74bdd85e78166031d2058e1069b3ed7ed967c93fc63abba06f31144"
         rpcauth2 = "rpcauth=rt2:f8607b1a88861fac29dfccf9b52ff9f$ff36a0c23c8c62b4846112e50fa888416e94c17bfd4c42f88fd8f55ec6a3137e"
-        rpcuser = "rpcuser=rpcuserðŸ’»"
-        rpcpassword = "rpcpassword=rpcpasswordðŸ”‘"
+        rpcuser = "rpcuser=rpcuserïýyŽ¹"
+        rpcpassword = "rpcpassword=rpcpasswordïýz½ƒ
         with open(os.path.join(self.options.tmpdir+"/node0", "jagaricoin.conf"), 'a', encoding='utf8') as f:
             f.write(rpcauth+"\n")
             f.write(rpcauth2+"\n")
@@ -118,7 +115,7 @@ class HTTPBasicsTest (BitcoinTestFramework):
         url = urllib.parse.urlparse(self.nodes[1].url)
 
         # rpcuser and rpcpassword authpair
-        rpcuserauthpair = "rpcuserðŸ’»:rpcpasswordðŸ”‘"
+        rpcuserauthpair = "rpcuserïýyŽ¹:rpcpasswordïýz½ƒ
 
         headers = {"Authorization": "Basic " + str_to_b64str(rpcuserauthpair)}
 

@@ -1,4 +1,4 @@
-TOR SUPPORT IN JAGARICOIN
+TOR SUPPORT IN JAGACOIN
 ======================
 
 It is possible to run Jagaricoin as a Tor hidden service, and connect to such services.
@@ -43,7 +43,7 @@ config file):
 
 	HiddenServiceDir /var/lib/tor/jagaricoin-service/
 	HiddenServicePort 10596 127.0.0.1:10596
-	HiddenServicePort 20598 127.0.0.1:20598
+	HiddenServicePort 20596 127.0.0.1:20596
 
 The directory can be different of course, but (both) port numbers should be equal to
 your jagaricoind's P2P listen port (10596 by default).

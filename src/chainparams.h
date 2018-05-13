@@ -55,11 +55,14 @@ public:
         EXT_PUBLIC_KEY,
         EXT_SECRET_KEY,
 
+        OLD_SECRET_KEY,
+
         MAX_BASE58_TYPES
     };
 
     const Consensus::Params& GetConsensus() const { return consensus; }
     const CMessageHeader::MessageStartChars& MessageStart() const { return pchMessageStart; }
+    const std::vector<unsigned char>& AlertKey() const { return vAlertPubKey; }
     int GetDefaultPort() const { return nDefaultPort; }
 
     const CBlock& GenesisBlock() const { return genesis; }
@@ -78,11 +81,17 @@ public:
     const CCheckpointData& Checkpoints() const { return checkpointData; }
     const ChainTxData& TxData() const { return chainTxData; }
     void UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64_t nStartTime, int64_t nTimeout);
+
+    int SwitchKGWblock() const { return nSwitchKGWblock; }
+    int SwitchDIGIblock() const { return nSwitchDIGIblock; }
+    int SwitchLyra2REv2_DGWblock() const { return nSwitchLyra2REv2_DGW; }
+
 protected:
     CChainParams() {}
 
     Consensus::Params consensus;
     CMessageHeader::MessageStartChars pchMessageStart;
+    std::vector<unsigned char> vAlertPubKey;
     int nDefaultPort;
     uint64_t nPruneAfterHeight;
     std::vector<CDNSSeedData> vSeeds;
@@ -95,6 +104,10 @@ protected:
     bool fMineBlocksOnDemand;
     CCheckpointData checkpointData;
     ChainTxData chainTxData;
+
+    int nSwitchKGWblock;
+    int nSwitchDIGIblock;
+    int nSwitchLyra2REv2_DGW;
 };
 
 /**

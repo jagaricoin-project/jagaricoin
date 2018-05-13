@@ -41,8 +41,8 @@ QString BitcoinUnits::name(int unit)
     switch(unit)
     {
     case BTC: return QString("JAGA");
-    case mBTC: return QString("mjaga");
-    case uBTC: return QString("ujaga");
+    case mBTC: return QString("mJAGA");
+    case uBTC: return QString::fromUtf8("μJAGA");
     default: return QString("???");
     }
 }
@@ -52,8 +52,8 @@ QString BitcoinUnits::description(int unit)
     switch(unit)
     {
     case BTC: return QString("Jagaricoins");
-    case mBTC: return QString("mJaga (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("uJaga (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case mBTC: return QString("Milli-Jagaricoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Jagaricoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }

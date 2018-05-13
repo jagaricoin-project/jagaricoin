@@ -1,29 +1,29 @@
-#!/bin/sh
+#!/bin/bash
 
 TOPDIR=${TOPDIR:-$(git rev-parse --show-toplevel)}
 SRCDIR=${SRCDIR:-$TOPDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$SRCDIR/jagaricoind}
-BITCOINCLI=${BITCOINCLI:-$SRCDIR/jagaricoin-cli}
-BITCOINTX=${BITCOINTX:-$SRCDIR/jagaricoin-tx}
-BITCOINQT=${BITCOINQT:-$SRCDIR/qt/jagaricoin-qt}
+JAGACOIND=${JAGACOIND:-$SRCDIR/jagaricoind}
+JAGACOINCLI=${JAGACOINCLI:-$SRCDIR/jagaricoin-cli}
+JAGACOINTX=${JAGACOINTX:-$SRCDIR/jagaricoin-tx}
+JAGACOINQT=${JAGACOINQT:-$SRCDIR/qt/jagaricoin-qt}
 
-[ ! -x $BITCOIND ] && echo "$JAGARICOIND not found or not executable." && exit 1
+[ ! -x $JAGACOIND ] && echo "$JAGACOIND not found or not executable." && exit 1
 
 # The autodetected version git tag can screw up manpage output a little bit
-BTCVER=($($JAGARICOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
+JAGAVER=($($JAGACOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
 
 # Create a footer file with copyright content.
 # This gets autodetected fine for bitcoind if --version-string is not set,
 # but has different outcomes for bitcoin-qt and bitcoin-cli.
 echo "[COPYRIGHT]" > footer.h2m
-$BITCOIND --version | sed -n '1!p' >> footer.h2m
+$JAGACOIND --version | sed -n '1!p' >> footer.h2m
 
-for cmd in $BITCOIND $BITCOINCLI $BITCOINTX $BITCOINQT; do
+for cmd in $JAGACOIND $JAGACOINCLI $JAGACOINTX $JAGACOINQT; do
   cmdname="${cmd##*/}"
-  help2man -N --version-string=${BTCVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
-  sed -i "s/\\\-${BTCVER[1]}//g" ${MANDIR}/${cmdname}.1
+  help2man -N --version-string=${JAGAVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
+  sed -i "s/\\\-${JAGAVER[1]}//g" ${MANDIR}/${cmdname}.1
 done
 
 rm -f footer.h2m
